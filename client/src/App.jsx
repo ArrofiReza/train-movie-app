@@ -8,6 +8,7 @@ import MainLayout from "./components/layout/MainLayout";
 import routes from "./routes/routes";
 import PageWrapper from "./components/common/PageWrapper";
 import "react-toastify/dist/ReactToastify.css"
+import 'swiper/css';
 const App = () => {
 
   // ambil state dari store
