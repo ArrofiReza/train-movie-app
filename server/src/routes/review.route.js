@@ -9,7 +9,7 @@ const router = express.Router({ mergeParams: true });
 router.get(
   "/",
   tokenMiddleware.auth,
-  reviewController.getReviewOfUser
+  reviewController.getReviewsOfUser
 );
 
 router.post(

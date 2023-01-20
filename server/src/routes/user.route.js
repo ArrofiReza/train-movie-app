@@ -76,7 +76,7 @@ router.get(
 router.get(
   "/favorites",
   tokenMiddleware.auth,
-  favoriteController.getFavoriteOfUser
+  favoriteController.getFavoritesOfUser
 );
 
 router.post(

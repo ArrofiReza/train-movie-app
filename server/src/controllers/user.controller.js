@@ -40,6 +40,8 @@ const signin = async(req, res) =>{
 
         if(!user) return responseHandler.badRequest(res,"user not exist")
 
+        if (!user.validPassword(password)) return responseHandler.badrequest(res, "Wrong password");
+        
         const token = jsonwebtoken.sign(
             {data:user.id},
             process.env.TOKEN_SECRET,
@@ -83,8 +85,8 @@ const getInfo = async(req, res) =>{
 
         if(!user) return responseHandler.notfound(res)
 
-        responseHandler.ok(res)
-    } catch (error) {
+        responseHandler.ok(res,user)
+    } catch {
         responseHandler.error(res)
     }
 }
